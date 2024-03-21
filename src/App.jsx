@@ -1,31 +1,34 @@
-import React from 'react';
-import LoginForm from './page/Login/LoginForm';
-import Register from './page/Register/Register';
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  Outlet,
-  Navigate,
-} from "react-router-dom";
-import NavBar from './components/navbar/NavBar';
-import LeftBar from './components/leftbar/LeftBar';
-import RightBar from './components/rightbar/RightBar';
-import Home from './page/Home/Home';
-import Profile from './page/Profile/Profile';
+// import React from 'react';
+// import LoginForm from './page/Login/LoginForm';
+// import Register from './page/Register/Register';
+// import {
+//   createBrowserRouter,
+//   RouterProvider,
+//   Route,
+//   Outlet,
+//   Navigate,
+// } from "react-router-dom";
+// import NavBar from './components/navbar/NavBar';
+// import LeftBar from './components/leftbar/LeftBar';
+// import RightBar from './components/rightbar/RightBar';
+// import Home from './page/Home/Home';
+// import Profile from './page/Profile/Profile';
 
 
 // function App() {
+//   const {currentUser} = false;
 
-//   const currentUser = false;
+
 
 //   const Layout = () => {
 //     return (
-//       <div>
-//         <NavBar/>
-//         <div style={{display: "flex"}}>
+//       <div className={`theme-${darkMode ? "dark" : "light"}`}>
+//         <NavBar />
+//         <div style={{ display: "flex" }}>
 //           <LeftBar />
-//           <Outlet />
+//           <div style={{ flex: 6 }}>
+//             <Outlet />
+//           </div>
 //           <RightBar />
 //         </div>
 //       </div>
@@ -40,25 +43,16 @@ import Profile from './page/Profile/Profile';
 //     return children;
 //   };
 
-
 //   const router = createBrowserRouter([
 //     {
-//       path:"/",
-//       element: <Layout />,
-//       children:[
+//       path: "/",
+//       element: (
+//         <ProtectedRoute>
+//           <Layout />
+//         </ProtectedRoute>
+//       ),
+//       children: [
 //         {
-//           path:"/",
-//           element:<Home/> 
-//         },
-//         {
-//           path:"/profile/:id",
-//           element: (
-//             <ProtectedRoute>
-//               <Layout />
-//             </ProtectedRoute>
-//           ),
-//           children: [
-//             {
 //           path: "/",
 //           element: <Home />,
 //         },
@@ -70,32 +64,46 @@ import Profile from './page/Profile/Profile';
 //     },
 //     {
 //       path: "/login",
-//       element: <LoginForm/>,
+//       element: <LoginForm />,
 //     },
 //     {
 //       path: "/register",
-//       element: <Register/>,
+//       element: <Register />,
 //     },
 //   ]);
-  
+
 //   return (
 //     <div>
-//     <RouterProvider router={router} />
+//       <RouterProvider router={router} />
 //     </div>
 //   );
 // }
 
 // export default App;
 
+import React from 'react';
+import LoginForm from './page/Login/LoginForm';
+import Register from './page/Register/Register';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  Outlet,
+} from "react-router-dom";
+import NavBar from './components/navbar/NavBar';
+import LeftBar from './components/leftbar/LeftBar';
+import RightBar from './components/rightbar/RightBar';
+import Home from './page/Home/Home';
+import Profile from './page/Profile/Profile';
+
 function App() {
-  const {currentUser} = false;
-
-
+  const currentUser = false;
 
   const Layout = () => {
     return (
-      <div className={`theme-${darkMode ? "dark" : "light"}`}>
-        <Navbar />
+      // <div className={`theme-${darkMode ? "dark" : "light"}`}>
+      <>
+      <NavBar />
         <div style={{ display: "flex" }}>
           <LeftBar />
           <div style={{ flex: 6 }}>
@@ -103,26 +111,16 @@ function App() {
           </div>
           <RightBar />
         </div>
-      </div>
+      </>
+        
+      // </div>
     );
-  };
-
-  const ProtectedRoute = ({ children }) => {
-    if (!currentUser) {
-      return <Navigate to="/login" />;
-    }
-
-    return children;
   };
 
   const router = createBrowserRouter([
     {
       path: "/",
-      element: (
-        <ProtectedRoute>
-          <Layout />
-        </ProtectedRoute>
-      ),
+      element: <Layout />,
       children: [
         {
           path: "/",
