@@ -80,7 +80,7 @@
 // }
 
 // export default App;
-
+import './index.scss';
 import React from 'react';
 import LoginForm from './page/Login/LoginForm';
 import Register from './page/Register/Register';
@@ -95,13 +95,19 @@ import LeftBar from './components/leftbar/LeftBar';
 import RightBar from './components/rightbar/RightBar';
 import Home from './page/Home/Home';
 import Profile from './page/Profile/Profile';
+import { DarkModeContext } from "./context/darkModeContext";
+import { useContext } from "react";
+import { AuthContext } from "./context/authContext";
 
 function App() {
-  const currentUser = false;
+  const {currentUser} = useContext(AuthContext);
+
+  const { darkMode } = useContext(DarkModeContext);
+
 
   const Layout = () => {
     return (
-      // <div className={`theme-${darkMode ? "dark" : "light"}`}>
+      <div className={`theme-${darkMode ? "dark" : "light"}`}>
       <>
       <NavBar />
         <div style={{ display: "flex" }}>
