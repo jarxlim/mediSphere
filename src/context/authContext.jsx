@@ -8,10 +8,9 @@ export const AuthContextProvider = ({ children }) => {
   );
 
   const login = () => {
-    //TO DO
     setCurrentUser({
       id: 1,
-      name: "John Doe",
+      name: "Chike Chima",
       profilePic:
         "https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600",
     });
@@ -19,7 +18,7 @@ export const AuthContextProvider = ({ children }) => {
 
   useEffect(() => {
     localStorage.setItem("user", JSON.stringify(currentUser));
-  }, [currentUser]);
+  }, [currentUser]); // useEffect dependency should be currentUser
 
   return (
     <AuthContext.Provider value={{ currentUser, login }}>
