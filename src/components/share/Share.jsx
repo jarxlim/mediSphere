@@ -2,8 +2,8 @@ import "./share.scss";
 import Image from "../../assets/icons8-gallery-100.png";
 import Map from "../../assets/map.png";
 import Friend from "../../assets/icons8-team-100.png";
-import Job from "../../assets/icons8-events-100.png"; // Import the job icon
-import Item from "../../assets/icons8-marketplace-100.png"; // Import the item icon
+import Job from "../../assets/icons8-events-100.png";
+import Item from "../../assets/icons8-marketplace-100.png";
 import { useContext } from "react";
 import { AuthContext } from "../../context/authContext";
 

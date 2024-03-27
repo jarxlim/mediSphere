@@ -14,6 +14,7 @@ import MyLogo from '../../assets/logo1.png';
 import { useContext } from "react";
 import { DarkModeContext } from "../../context/darkModeContext";
 import { AuthContext } from '../../context/authContext';
+import Consult from '../../assets/icons8-online-support-100.png'
 
 const Navbar = () => {
 
@@ -39,6 +40,9 @@ const Navbar = () => {
         </div>
       </div>
       <div className="right">
+        <button className="consult-specialist outlined-btn">
+          <img src={Consult} alt="Consult Specialist Icon"/> Consult a Specialist
+        </button>
         <WorkOutlineOutlinedIcon />
         <StorefrontOutlinedIcon />
         <EmailOutlinedIcon />

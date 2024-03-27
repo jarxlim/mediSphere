@@ -35,7 +35,7 @@
 
         input {
           border: none;
-          width: 500px;
+          width: 200px;
           background-color: transparent;
           color: themed("textColor");
 
@@ -51,6 +51,27 @@
     }
 
     .right {
+      .consult-specialist.outlined-btn {
+        background-color: transparent;
+        border: 1px solid #ddd; 
+        color: #333;
+        padding: 10px 15px;
+        border-radius: 14px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        font-weight: bolder;
+      }
+      
+      .consult-specialist.outlined-btn img {
+        margin-right: 5px;
+        width: 18px; 
+        height: 18px; 
+      }
+      
+      .consult-specialist.outlined-btn:hover { 
+        background-color: antiquewhite;
+      }
       display: flex;
       align-items: center;
       gap: 20px;

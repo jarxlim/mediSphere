@@ -8,19 +8,19 @@ const Posts = () => {
   const posts = [
     {
       id: 1,
-      name: "Chike Chima",
+      name: "Amanda Chima",
       userId: 1,
       profilePic:
-        "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://assets.weforum.org/article/image/responsive_big_webp_XaHpf_z51huQS_JPHs-jkPhBp0dLlxFJwt-sPLpGJB0.webp",
       desc: "This is my first post",
-      img: "https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      img: "https://assets.weforum.org/article/image/responsive_big_webp_XaHpf_z51huQS_JPHs-jkPhBp0dLlxFJwt-sPLpGJB0.webp",
     },
     {
       id: 2,
       name: "Jane Chima",
       userId: 2,
       profilePic:
-        "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w600/2023/10/free-images.jpg",
       desc: "Hello World!",
     },
   ];
