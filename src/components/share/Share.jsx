@@ -18,7 +18,11 @@ const Share = () => {
             src={currentUser.profilePic}
             alt=""
           />
+          
           <input type="text" placeholder={`Start a post...`} />
+          <div className="right">
+            <button>Post</button>
+          </div>
         </div>
         <hr />
         <div className="bottom">
@@ -49,9 +53,7 @@ const Share = () => {
               <span>Post a Job</span>
             </div>
           </div>
-          <div className="right">
-            <button>Post</button>
-          </div>
+          
         </div>
       </div>
     </div>

@@ -17,42 +17,42 @@ import { AuthContext } from '../../context/authContext';
 import Consult from '../../assets/icons8-online-support-100.png'
 
 const Navbar = () => {
-
   const { toggle, darkMode } = useContext(DarkModeContext);
   const { currentUser } = useContext(AuthContext);
 
   return (
-    <div className="navbar">
-      <div className="left">
-        <Link to="/" style={{ textDecoration: "none" }}>
-        <img src={MyLogo} alt="MediSphere Logo" style={{ height: '40px' }} />
-        </Link>
-        <HomeOutlinedIcon />
-        {darkMode ? (
-          <WbSunnyOutlinedIcon onClick={toggle} />
-        ) : (
-          <DarkModeOutlinedIcon onClick={toggle} />
-        )}
-        <GridViewOutlinedIcon />
-        <div className="search">
-          <SearchOutlinedIcon />
-          <input type="text" placeholder="Search..." />
+    <div className="navbar-container">  {/* Added a wrapper here */}
+      <div className="navbar">
+        <div className="left">
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <img src={MyLogo} alt="MediSphere Logo" style={{ height: '40px' }} />
+          </Link>
+          <HomeOutlinedIcon />
+          {darkMode ? (
+            <WbSunnyOutlinedIcon onClick={toggle} />
+          ) : (
+            <DarkModeOutlinedIcon onClick={toggle} />
+          )}
+          <button className="consult-specialist outlined-btn">
+            Call an Ambulance
+          </button>
+        </div>
+
+        <div className="right">
+          <button className="consult-specialist outlined-btn">
+            <img src={Consult} alt="Consult Specialist Icon" /> Consult a Specialist
+          </button>
+          <WorkOutlineOutlinedIcon />
+          <StorefrontOutlinedIcon />
+          <EmailOutlinedIcon />
+          <NotificationsOutlinedIcon />
+          <div className="user">
+            <img src={currentUser.profilePic} alt="" />
+            <span>{currentUser.name}</span>
+          </div>
         </div>
       </div>
-      <div className="right">
-        <button className="consult-specialist outlined-btn">
-          <img src={Consult} alt="Consult Specialist Icon"/> Consult a Specialist
-        </button>
-        <WorkOutlineOutlinedIcon />
-        <StorefrontOutlinedIcon />
-        <EmailOutlinedIcon />
-        <NotificationsOutlinedIcon />
-        <div className="user">
-          <img src={currentUser.profilePic} alt="" />
-          <span>{currentUser.name}</span>
-        </div>
-      </div>
-    </div>
+    </div>  
   );
 };
 
@@ -60,3 +60,8 @@ export default Navbar;
 
 
 
+
+        <div className="search">
+          <SearchOutlinedIcon />
+          <input type="text" placeholder="Search..."/>
+          </div>

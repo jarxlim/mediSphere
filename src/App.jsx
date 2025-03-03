@@ -7,6 +7,7 @@ import {
   RouterProvider,
   Route,
   Outlet,
+  Navigate,
 } from "react-router-dom";
 import NavBar from './components/navbar/NavBar';
 import LeftBar from './components/leftbar/LeftBar';
